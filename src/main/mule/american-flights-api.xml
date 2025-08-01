@@ -28,6 +28,16 @@ output application/json
                         <ee:set-variable variableName="httpStatus">400</ee:set-variable>
                     </ee:variables>
                 </ee:transform>
+                <logger doc:name="Logger" doc:id="labvcq"/>
+                <ee:transform doc:name="Transform" doc:id="lcvnoe" >
+                    <ee:message >
+                        <ee:set-payload doc:name="Set payload" doc:id="hnihlp" ><![CDATA[%dw 2.0
+                output application/java
+                ---
+                {
+                }]]></ee:set-payload>
+                    </ee:message>
+                </ee:transform>
             </on-error-propagate>
             <on-error-propagate type="APIKIT:NOT_FOUND">
                 <ee:transform doc:name="Transform Message">
